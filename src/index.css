@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1A202C;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.link {
+  fill: none;
+  stroke: #4A5568;
+  stroke-width: 1.5px;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: #555;
+  stroke-width: 2px;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+.node--internal text {
+  fill: #E2E8F0;
+}
+
+.node--leaf text {
+  fill: #ffffff;
+}
+
+.ask-button {
+  cursor: pointer;
+  fill: #4FD1C5;
+  font-weight: bold;
+}
+
+.ask-button:hover {
+  fill: #38B2AC;
+}
+
+/* Add smooth transitions for node expansion/collapse */
+.node {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Improve readability of node text */
+.node text {
+  font-size: 14px;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Style the search input and button */
+input[type="text"], button {
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Add a subtle animation to the loading spinner */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite, pulse 2s ease-in-out infinite;
+}
+
+/* Improve scrollbar style */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2D3748;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4A5568;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .node text {
+    font-size: 12px;
+  }
+}
